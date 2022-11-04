@@ -23,15 +23,12 @@ fi
 
 whiptail --title "CONFIRMATION" --yesno "DO you want to install BYOB?" 8 78 
 if [[ $? -eq 0 ]]; then 
-  whiptail --title "MESSAGE" --msgbox "Download starts now" 8 78 
+  sleep 1
 elif [[ $? -eq 1 ]]; then 
   whiptail --title "MESSAGE" --msgbox "Cancelling Process" 8 78 
 elif [[ $? -eq 255 ]]; then 
   whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
 fi 
-
-
-sleep 10
 
 apt update -y && apt upgrade -y
 apt install sudo -y
