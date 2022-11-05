@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-while true;do
-	read -p "Do you wish to install PHONEINFOGA? [(y)es/(n)o] " yn
-		case $yn in [Yy]* ) break;;
-		[Nn]* ) exit;; * ) echo "Please answer [y]es or [n]o.";;
-	esac
- done
+whiptail --title "CONFIRMATION" --yesno "Do you want to install PHONEINFOGA?" 8 78 
+if [[ $? -eq 0 ]]; then 
+  sleep 1 
+elif [[ $? -eq 1 ]]; then 
+  whiptail --title "MESSAGE" --msgbox "Cancelling Process since user pressed <NO>." 8 78 
+elif [[ $? -eq 255 ]]; then 
+  whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
+fi 
 
 #https://github.com/sundowndev/PhoneInfoga
 
@@ -27,24 +29,38 @@ echo "installing PHONEINFOGA"
 sudo apt install curl -y
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
-
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+curl -fsSL https://get.docker.com -o get-docker.sh -y
+DRY_RUN=1 sh ./get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh -y
+sudo sh get-docker.sh
 
 echo "pulling from docker"
 
 docker pull sundowndev/phoneinfoga:latest
 
 
-read -p "[A]Do you want to run in terminal or [B] do you want to run via local website?"
-        read AB
 
-case $AB in 
-	A ) echo runing via terminal;
-		echo "please enter the phonenumber"
-        read phone
+whiptail --title "CONFIRMATION" --yesno "Do you want to run PHONEINFOGA?" 8 78 
+if [[ $? -eq 0 ]]; then 
+  chmod u+x phoneinfoga_run.sh
+  ./phoneinfoga_run.sh
+elif [[ $? -eq 1 ]]; then 
+  whiptail --title "MESSAGE" --msgbox "Cancelling Process since user pressed <NO>." 8 78 
+elif [[ $? -eq 255 ]]; then 
+  whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
+fi 
 
-        docker run -it sundowndev/phoneinfoga scan -n $phone;;
-	B ) docker run it p 8080.8080 sundowndev/phoneinfoga serve -p 8080;;
-	* ) echo invalid response;
-		exit 1;;
-esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+

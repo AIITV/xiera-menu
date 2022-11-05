@@ -9,6 +9,6 @@ ram=$(grep MemTotal /proc/meminfo)
 echo "
 Username: $usrname 
 RAM: $ram 
-Time since last reboot: $time (minutes)" > out.txt
+Time since last reboot: $time" > out.txt
 
 whiptail --textbox --scrolltext out.txt 10 80

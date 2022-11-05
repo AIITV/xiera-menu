@@ -32,18 +32,18 @@ case $CHOICE in
         ;;
 
 	"5)")   
-        chmod og-rwx somepackage
+        sudo apt install htop -y
+		chmod og-rwx htop
 		htop
         ;;
 
 	"6)")   
-		chmod u+x phoneinfoga_run.sh
-		./Phoeninfoga_run.sh
+		chmod u+x phoneinfoga.sh
+		./phoneinfoga.sh
         ;;
 
 	"9)") exit
         ;;
 esac
-whiptail --msgbox "Done" 20 78
 exit 
 }

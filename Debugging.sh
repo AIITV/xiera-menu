@@ -23,4 +23,4 @@ pip install Flask_Bcrypt
 pip install flask_mail
 pip install wtforms
 
-cd /home"$name"xiera-menu
+cd /home/"$name"/xiera-menu

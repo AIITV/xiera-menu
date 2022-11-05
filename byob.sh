@@ -15,7 +15,7 @@ if [[ $? -eq 0 ]]; then
         whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
       fi
 elif [[ $? -eq 1 ]]; then 
-  sleep 5
+  sleep 1
 elif [[ $? -eq 255 ]]; then 
   whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
 fi 
@@ -39,23 +39,27 @@ sudo apt install curl -y
 
 #made my own git cuz of the error that is in line 90
 
-cd /home"$name"xiera-menu
+cd /home/"$name"/xiera-menu
 
 git clone https://github.com/malwaredllc/byob
 git clone https://github.com/FforFixed/server.py.git
 
-cd /home"$name"
-cd /home"$name"xiera-menu/byob/web-gui/
+cd /home/"$name"/
+cd /home/"$name"/xiera-menu/byob/web-gui/
 rm startup.sh
-cd /home"$name"
-cd /home"$name"xiera-menu/server.py/
-cp startup.sh /home"$name"xiera-menu/byob/web-gui/
+cd /home/"$name"/
+cd /home/"$name"/xiera-menu/server.py/
+cp startup.sh /home/"$name"/xiera-menu/byob/web-gui/
 
 #thats the convinience script
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
 curl -fsSL https://get.docker.com -o get-docker.sh -y
 DRY_RUN=1 sh ./get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh -y
+sudo sh get-docker.sh
+
+
 
 sudo apt install python3 -y
 sudo apt install python3-pip -y
@@ -72,8 +76,8 @@ pip install wtforms
 
 whiptail --title "FINAL CONFERMATION" --msgbox "the installing script will run now, pls dont cancel that script. It takes between 15-1h, depending on your pc." 8 78
 
-cd /home"$name"
-cd /home"$name"xiera-menu/byob/web-gui/
+cd /home/"$name"/
+cd /home/"$name"/xiera-menu/byob/web-gui/
 chmod u+x startup.sh
 ./startup.sh
 
