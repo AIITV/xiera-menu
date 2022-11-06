@@ -2,6 +2,7 @@
 
 #cleaning data
 
+apt-get install -y sudo
 sudo apt install whiptail
 
 {
@@ -13,6 +14,7 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 	"4)" "Number of processes and threads" \
 	"5)" "Debugging" \
 	"6)" "Userinfo" \
+	"7)" "Hacking tools" \
 	"9)" "End script"  3>&2 2>&1 1>&3	
 )
 
@@ -48,6 +50,11 @@ case $CHOICE in
 		chmod u+x userinfo.sh
 		./userinfo.sh
         ;;
+
+	"7)")
+		chmod u+x hacking.sh
+		./hacking.sh
+		;;
 
 	"9)") exit
         ;;
