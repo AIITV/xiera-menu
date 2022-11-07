@@ -12,8 +12,6 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 	"9)" "End script"  3>&2 2>&1 1>&3	
 )
 
-#test
-echo test
 
 case $CHOICE in
 	"1)")   
