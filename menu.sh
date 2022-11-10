@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-#cleaning data
-
 apt-get install -y sudo
-sudo apt install whiptail
+sudo apt install whiptail -y
 
 {
 CHOICE=$(
@@ -15,6 +13,7 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 	"5)" "Debugging" \
 	"6)" "Userinfo" \
 	"7)" "Hacking tools" \
+	"8)" "uninstall" \
 	"9)" "End script"  3>&2 2>&1 1>&3	
 )
 
@@ -56,6 +55,10 @@ case $CHOICE in
 		./hacking.sh
 		;;
 
+	"8)")
+		chmod u+x uninstall.sh
+		./uninstall.sh
+		;;
 	"9)") exit
         ;;
 esac
