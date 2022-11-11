@@ -12,9 +12,10 @@ elif [[ $? -eq 255 ]]; then
 fi
 
 sudo apt-get remove whiptail -y
-sudo apt-get remove 
+sudo apt remove whiptail -y
 
 cd /home/"$name"/
+
 rm -r xiera-menu
 
 
