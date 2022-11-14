@@ -2,6 +2,7 @@
 
 name=$(whoami)
 
+cd
 cd /home/"$name"/xiera-menu/byob/web-gui 
 
 chmod u+x Debugging.sh

@@ -3,7 +3,7 @@
 name=$(whoami)
 dir=$(pwd)
 
-cd /home/"$name"/
+cd 
 
 git clone https://github.com/AIITV/pi-pico-lib.git
 

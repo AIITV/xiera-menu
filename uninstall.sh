@@ -14,9 +14,11 @@ fi
 sudo apt-get remove whiptail -y
 sudo apt remove whiptail -y
 
-cd /home/"$name"/
+cd 
 
 rm -r xiera-menu
+
+
 
 
 
