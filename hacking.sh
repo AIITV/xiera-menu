@@ -10,7 +10,7 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 	"5)" "Debugging" \
 	"6)" "Userinfo" \
 	"7)" "Hacking tools" \
-	"8)" "uninstall" \
+	"8)" "Back" \
 	"9)" "End script"  3>&2 2>&1 1>&3	
 )
 
@@ -51,14 +51,16 @@ case $CHOICE in
 	"7)")
 		chmod u+x hacking.sh
 		./hacking.sh
+		./menu.sh
 		;;
 
 	"8)")
 		chmod u+x uninstall.sh
 		./uninstall.sh
+		./menu.sh
 		;;
-	"9)") exit
+	"9)")
+		exit
         ;;
 esac
-./menu.sh
 }

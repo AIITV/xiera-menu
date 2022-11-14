@@ -11,8 +11,6 @@ elif [[ $? -eq 255 ]]; then
   whiptail --title "MESSAGE" --msgbox "User pressed ESC. Exiting the script" 8 78 
 fi
 
-sudo apt-get remove whiptail -y
-sudo apt remove whiptail -y
 
 cd 
 
