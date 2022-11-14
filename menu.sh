@@ -22,10 +22,12 @@ case $CHOICE in
 	"1)")   
 		chmod u+x App.sh
 		./App.sh
+		./menu.sh
 	;;
 	"2)")   
 	   chmod u+x upt.sh
-	   ./upt.sh	  
+	   ./upt.sh	
+	   ./menu.sh  
 	;;
 
 	"3)")   
@@ -33,21 +35,25 @@ case $CHOICE in
 		python3  password.py
 	    chmod u+x pass_show.sh
 	    ./pass_show.sh
+		./menu.sh
         ;;
 
 	"4)")   
 		chmod u+x pros.sh
 		./pros.sh
+		./menu.sh
         ;;
 
 	"5)")   
         chmod u+x Debugging.sh
 		./Debugging.sh
+		./menu.sh
         ;;
 
 	"6)")   
 		chmod u+x userinfo.sh
 		./userinfo.sh
+		./menu.sh
         ;;
 
 	"7)")

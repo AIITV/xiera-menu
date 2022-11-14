@@ -9,6 +9,7 @@ whiptail --title "Operative Systems" --menu "Make your choice" 16 100 9 \
 	"4)" "SSH-server restart" \
 	"5)" "htop" \
 	"6)" "Phoeninfoga" \
+	"8)" "back"
 	"9)" "End script"  3>&2 2>&1 1>&3	
 )
 
@@ -41,8 +42,12 @@ case $CHOICE in
 		./phoneinfoga.sh
         ;;
 
-	"9)") exit
-        ;;
+	"8)")
+		./menu.sh
+		;;
+	"9)") 
+		exit
+		;;
 esac
 exit 
 }
